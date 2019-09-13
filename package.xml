@@ -1,0 +1,24 @@
+<package format="2">
+  <name>rosserial_stm32f7</name>
+  <version>0.8.0</version>
+  <description>
+     STM32F7 client side source for rosserial.
+  </description>
+  <author>Michael Ferguson</author>
+  <author>Adam Stambler</author>
+  <author> Federica Di Lauro </author>
+  <maintainer email="federicadilauro1998@gmail.com">Federica Di Lauro</maintainer>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/rosserial_client</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_export_depend>rosbash</build_export_depend>
+
+  <exec_depend>rosserial_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>tf</exec_depend>
+  
+  <test_depend>rosunit</test_depend>
+  <test_depend>rosserial_msgs</test_depend>
+</package>

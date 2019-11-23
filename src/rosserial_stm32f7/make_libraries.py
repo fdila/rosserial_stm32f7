@@ -84,9 +84,11 @@ print "\nExporting to %s" % path
 rospack = rospkg.RosPack()
 
 # copy ros_lib stuff in
-if os.path.exists(path+"/Inc/ros_lib/"):
-     shutil.rmtree(path+"/Inc/ros_lib/")
-os.makedirs(path+"/Inc/ros_lib/")
+if os.path.exists(path+"/Inc/ros/"):
+     shutil.rmtree(path+"/Inc/ros/")
+if os.path.exists(path+"/Inc/tf/"):
+     shutil.rmtree(path+"/Inc/tf/")
+
 
 rosserial_stm32f7_dir = rospack.get_path(THIS_PACKAGE)
 files = os.listdir(rosserial_stm32f7_dir+"/src/ros_lib")

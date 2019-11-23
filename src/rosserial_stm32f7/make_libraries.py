@@ -3,7 +3,7 @@
 #####################################################################
 # Software License Agreement (BSD License)
 #
-# Copyright (c) 2018, Kenta Yonekura (a.k.a. yoneken), 
+# Copyright (c) 2018, Kenta Yonekura (a.k.a. yoneken), Federica Di Lauro (a.k.a fdila)
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -85,7 +85,6 @@ rospack = rospkg.RosPack()
 
 # copy ros_lib stuff in
 if os.path.exists(path+"/Inc/ros_lib/"):
-     print("ciao")
      shutil.rmtree(path+"/Inc/ros_lib/")
 os.makedirs(path+"/Inc/ros_lib/")
 
@@ -93,16 +92,16 @@ rosserial_stm32f7_dir = rospack.get_path(THIS_PACKAGE)
 files = os.listdir(rosserial_stm32f7_dir+"/src/ros_lib")
 for f in files:
   if os.path.isfile(rosserial_stm32f7_dir+"/src/ros_lib/"+f):
-    shutil.copy(rosserial_stm32f7_dir+"/src/ros_lib/"+f, path+"/Inc/ros_lib/")
-rosserial_client_copy_files(rospack, path+"/Inc/ros_lib/")
+    shutil.copy(rosserial_stm32f7_dir+"/src/ros_lib/"+f, path+"/Inc/")
+rosserial_client_copy_files(rospack, path+"/Inc/")
 
 # generate messages
-rosserial_generate(rospack, path+"/Inc/ros_lib/", ROS_TO_EMBEDDED_TYPES)
+rosserial_generate(rospack, path+"/Inc/", ROS_TO_EMBEDDED_TYPES)
 
 
-sourcefiles = os.listdir(path+"/Inc/ros_lib/")
+sourcefiles = os.listdir(path+"/Inc/")
 
 for file in sourcefiles:
     if file.endswith('.cpp'):
-        shutil.move(os.path.join(path+"/Inc/ros_lib/",file), os.path.join(path+"/Src/",file))
+        shutil.move(os.path.join(path+"/Inc/",file), os.path.join(path+"/Src/",file))
 

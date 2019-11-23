@@ -15,9 +15,9 @@ As a general rule you should cd into the folder which has "Src" and "Inc" inside
 
 ## Usage
 1. Create a new STM32CubeIDE project:
-  * Enable USART3, using PD8 and PD9 as Tx and Rx pins
+  * Enable USARTx and select TX and RX pins
   * Enable USART3 global interrupt
-  * Enable DMA for USART3_TX and USART3_RX and set their priority to HIGH
+  * Enable DMA for USARTx_TX and USARTx_RX and set their priority to HIGH
 
 2. Create ros libraries in your project
 ```

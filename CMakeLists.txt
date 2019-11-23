@@ -6,8 +6,6 @@ catkin_package(
   CFG_EXTRAS ${PROJECT_NAME}-extras.cmake
 )
 
-catkin_python_setup()
-
 if(CATKIN_ENABLE_TESTING)
   find_package(rosserial_msgs REQUIRED)
   include_directories(src ${rosserial_msgs_INCLUDE_DIRS})

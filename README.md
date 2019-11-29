@@ -1,4 +1,10 @@
 # rosserial_stm32f7
+
+# DISCLAIMER: 
+## THIS IMPLEMENTATION CURRENTLY WORKS ONLY WITH STDS MESSAGES AND ISN'T MAINTAINED 
+### IF YOU DO MANAGE TO MAKE IT WORK WITH EVERY MESSAGE A PULL REQUEST WOULD BE NICE
+
+
 Rosserial implementation for STM32F767, developed to work with STM32CubeIDE projects
 
 Heavily based on [yoneken's rosserial_stm32](https://github.com/yoneken/rosserial_stm32)
